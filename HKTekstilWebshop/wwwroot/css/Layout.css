@@ -1,0 +1,72 @@
+﻿body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    font-family: var(--font);
+}
+
+.Header-Container {
+    width: 100%;
+    height: 8.5vh; 
+    background-color: var(--color-background);
+    display: flex;
+    align-items: center;
+    color: var(--color-white);
+    padding-left: var(--pad-xl);
+    padding-right: var(--pad-xl);
+    font-size: var(--fontsize-m);
+    font-weight: var(--fontweight-reg);
+}
+
+.Header-Logo {
+    width: 7.0625rem;
+    height: 4.25rem;
+}
+
+.Header-Info-Container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: space-around;
+}
+
+@media (max-width: 900px) {
+    .Header-Info-Container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.Header-Info-Container p {
+    margin: 0;
+}
+
+.Header-Small-Logo {
+    height: 2rem;
+    width: 1.6875rem;
+}
+
+.Header-InfoBox {
+    display: flex;
+    align-items: center;
+    gap: var(--gap-xs);
+}
+
+.Header-Right-Container {
+    display: flex;
+    gap: var(--gap-s);
+}
+
+.Header-Button-Style {
+    width: 9.75rem;
+    height: 2rem;
+    color: var(--color-white);
+    background-color: var(--color-button);
+    border-radius: var(--br-s);
+    border: none;
+    cursor: pointer;
+}
+
+#Header-ShoppingCart-Button {
+    cursor: pointer;
+}

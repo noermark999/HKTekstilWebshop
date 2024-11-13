@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - HKTekstilWebshop</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/Layout.css"/>
+    <link rel="stylesheet" href="~/css/global.css" />
+    <link rel="stylesheet" href="~/HKTekstilWebshop.styles.css" asp-append-version="true" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    @RenderSection("Head", required: false)
+</head>
+<body>
+    <header>
+        <nav class="Header-Container">
+            <div class="Header-Logo-Container">
+                <img class="Header-Logo" src="~/Resources/Header/HKTekstilLogo.svg"/>
+            </div>
+            <div class="Header-Info-Container">
+                <div class="Header-Phonenumber Header-InfoBox">
+                    <img class="Header-Small-Logo" src="~/Resources/Header/HeaderPhone.svg"/>
+                    <p>+45 61 74 97 95</p>
+                </div>
+                <div class="Header-Mail Header-InfoBox">
+                    <img class="Header-Small-Logo" src="~/Resources/Header/HeaderMail.svg" />
+                    <p>kontakt@hktekstil.dk</p>
+                </div>
+                <div class="Header-Website Header-InfoBox">
+                    <img class="Header-Small-Logo" src="~/Resources/Header/HeaderGlobe.svg" />
+                    <p>www.hktekstil.dk</p>
+                </div>
+            </div>
+            @if (User.Identity.IsAuthenticated)
+            {
+                <div class="Header-Right-Container">
+                    <button class="Header-Button-Style" id="Header-Signout">Log ud</button>
+                    <img class="Header-Small-Logo" id="Header-ShoppingCart-Button" src="~/Resources/Header/HeaderShoppingBag.svg" />
+                </div>
+            }
+        </nav>
+    </header>
+
+    @RenderBody()
+    @*
+    <footer class="border-top footer text-muted">
+    <div class="container">
+    &copy; 2024 - HKTekstilWebshop - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+    </div>
+    </footer>
+    *@
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/Layout.js" type="module"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

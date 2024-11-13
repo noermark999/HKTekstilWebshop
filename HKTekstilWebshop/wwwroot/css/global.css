@@ -1,0 +1,58 @@
+﻿html {
+    font-size: 16px;
+}
+
+@media (max-width: 1200px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 900px) {
+    html {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 600px) {
+    html {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 500px) {
+    html {
+        font-size: 8px;
+    }
+}
+
+:root {
+    /* FONT */
+    --font: "Inter", sans-serif;
+
+    --fontweight-reg: 400;
+
+    --fontsize-s: 0.875rem;
+    --fontsize-m: 1rem;
+
+    /* COLORS */
+    --color-background: #043148;
+    --color-backgroundwhite: #F5F5F5;
+    --color-input: #032232;
+    --color-button: #2C2C2C;
+    --color-white: #FFFFFF;
+    --color-error: #ff0000;
+    /* PADDING */
+    --pad-m: 1rem;
+    --pad-l: 1.5rem;
+    --pad-xl: 2rem;
+    /* GAP */
+    --gap-xs: 0.5rem;
+    --gap-s: 0.75rem;
+    --gap-l: 1.5rem;
+    --gap-4xl: 6.25rem;
+    /* BORDER RADIUS */
+    --br-s: 0.5rem;
+    /* MARGIN */
+    --marg-xl: 2rem;
+}

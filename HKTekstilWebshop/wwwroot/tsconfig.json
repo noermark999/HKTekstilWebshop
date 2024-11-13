@@ -1,0 +1,17 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "allowJs": true,
+    "noImplicitAny": false,
+    "noEmitOnError": true,
+    "removeComments": false,
+    "sourceMap": true,
+    "target": "ES2022",
+    "outDir": "./js",
+    "module": "ES2022",
+    "moduleDetection": "force"
+  },
+  "include": [
+    "ts/**/*"
+  ]
+}

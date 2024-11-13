@@ -1,0 +1,31 @@
+﻿@{
+    Layout = "_Layout";
+}
+
+@section head {
+    <link rel="stylesheet" href="~/css/LoginRegister/Login.css" />
+}
+
+<div class="Login-Main">
+    <div class="Login-Form-Container">
+        <div class="Hide" id="Login-ErrorMessage-Container">
+            <label id="Login-ErrorMessage"></label>
+        </div>
+        <form id="Login-Form" class="Login-Form-Style">
+            <div class="Login-EmailUser-Container Login-Input-Container">
+                <label>Brugernavn</label>
+                <input class="Login-Input-Style" id="Login-EmailUser-Input" required/>
+            </div>
+            <div class="Login-Password-Container Login-Input-Container">
+                <label>Adgangskode</label>
+                <input class="Login-Input-Style" id="Login-Password-Input" type="password" required />
+            </div>
+            <button class="Login-Button-Style" id="Login-Button-SignIn">Log ind</button>
+        </form>
+        <button class="Login-Button-Style" id="Login-Button-Register">Registrer</button>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/Login.js" type="module"></script>
+}

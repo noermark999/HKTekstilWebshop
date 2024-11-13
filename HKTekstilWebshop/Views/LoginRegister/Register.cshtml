@@ -1,0 +1,65 @@
+﻿@model HKTekstilWebshop.Models.LoginRegister.RegisterModel
+
+@{
+    Layout = "_Layout";
+}
+
+@section head {
+    <link rel="stylesheet" href="~/css/LoginRegister/Register.css" />
+}
+
+<div class="Register-Main">
+    <div class="Register-Form-Container">
+        <div class="Hide" id="Register-ErrorMessage-Container">
+            <label id="Register-ErrorMessage"></label>
+        </div>
+        <form id="Register-Form" class="Register-Form-Style">
+            <div class="Register-Input-Container">
+                <label>Find virksomhed/efterskole</label>
+                <select class="Register-Input-Style" id="Register-Organization-Dropdown">
+                    @foreach(var organization in Model.Organizations)
+                    {
+                        <option value="@organization.ID">@organization.Name</option>
+                    }
+                </select>
+            </div>
+            <div class="Register-Input-Container">
+                <label>Oprettelseskode</label>
+                <input class="Register-Input-Style" id="Register-RegisterCode-Input" type="text" required />
+            </div>
+            <div class="Register-Input-Container">
+                <label>Fornavn</label>
+                <input class="Register-Input-Style" id="Register-Firstname-Input" type="text" required />
+            </div>
+            <div class="Register-Input-Container">
+                <label>Efternavn</label>
+                <input class="Register-Input-Style" id="Register-Lastname-Input" type="text" required />
+            </div>
+            <div class="Register-Input-Container">
+                <label>Email</label>
+                <input class="Register-Input-Style" id="Register-Email-Input" type="email" required />
+            </div>
+            <div class="Register-Input-Container">
+                <label>Telefonnummber</label>
+                <input class="Register-Input-Style" id="Register-Phonenumber-Input" type="tel" required />
+            </div>
+            <div class="Register-Input-Container">
+                <label>Brugernavn</label>
+                <input class="Register-Input-Style" id="Register-Username-Input" type="text" required />
+            </div>
+            <div class="Register-Input-Container">
+                <label>Adgangskode</label>
+                <input class="Register-Input-Style" id="Register-Password-Input" type="password" required />
+            </div>
+            <div class="Register-Input-Container">
+                <label>Bekræft adgangskode</label>
+                <input class="Register-Input-Style" id="Register-ConfirmPassword-Input" type="password" required />
+            </div>
+            <button class="Register-Button-Style" id="Register-Button-Register">Registrer</button>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/Register.js" type="module"></script>
+}
