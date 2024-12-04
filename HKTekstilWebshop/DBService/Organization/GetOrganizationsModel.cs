@@ -4,7 +4,7 @@ using System.Data;
 
 namespace HKTekstilWebshop.DBService.Organization
 {
-    public class GetOrganizationsModel
+    public class GetOrganizationsModel : IModel<GetOrganizationInput, GetOrganizationOutput>
     {
         public async Task<GetOrganizationOutput> Execute(GetOrganizationInput input)
         {

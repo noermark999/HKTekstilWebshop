@@ -5,7 +5,7 @@ using System.Data;
 
 namespace HKTekstilWebshop.DBService.User
 {
-    public class GetUserInfoModel
+    public class GetUserInfoModel : IModel<GetUserInfoInput, GetUserInfoOutput>
     {
         public async Task<GetUserInfoOutput> Execute(GetUserInfoInput input)
         {

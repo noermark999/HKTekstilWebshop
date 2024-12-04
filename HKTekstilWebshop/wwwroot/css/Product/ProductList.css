@@ -1,0 +1,111 @@
+﻿.Products-MainContainer {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: var(--color-black);
+    background-color: var(--color-backgroundwhite);
+    font-family: var(--font);
+}
+
+h1 {
+    font-size: var(--fontsize-4xl);
+    font-weight: var(--fontweight-bold);
+}
+
+h3 {
+    font-size: var(--fontsize-2xl);
+    font-weight: var(--fontweight-reg);
+}
+
+.Products-Top-ImageTitle-Container {
+    display: flex;
+    width: 100%;
+    height: 65vh;
+    background-image: url('/Resources/ProductList/PRO_ShirtImage.jpg');
+}
+
+.Products-Top-Text-Container {
+    position: relative;
+    top: 45%;
+    left: 10%;
+}
+
+.Products-List-Bottom-Container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--gap-2xl);
+    padding-top: var(--pad-2xl);
+    padding-bottom: var(--pad-2xl);
+}
+
+.Products-List-Title-Container {
+
+}
+
+.Products-List-Container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-column-gap: var(--gap-4xl);
+    grid-row-gap: var(--gap-2xl);
+}
+
+.Products-List-Item-Container {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.Products-List-Item-Image {
+    width: 18.75rem;
+    height: 27.5rem;
+}
+
+.Products-List-Item-Organization {
+    font-weight: var(--fontweight-reg);
+    font-size: var(--font-m);
+    margin: 0;
+}
+
+.Products-List-Item-ProductTitle {
+    font-weight: var(--fontweight-reg);
+    font-size: var(--fontsize-l);
+    margin: 0;
+}
+
+.Products-List-Item-ProductPrice {
+    font-weight: var(--fontweight-reg);
+    font-size: var(--fontsize-l);
+    margin: 0;
+}
+
+.Products-List-PageButton-Container {
+    display: flex;
+    gap: var(--gap-xs);
+    align-self: flex-start;
+}
+
+.Products-List-PageButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: var(--color-button);
+    border-radius: var(--br-s);
+    color: var(--color-white);
+    text-decoration: none;
+}
+
+    .Products-List-PageButton:hover {
+        color: var(--color-white);
+        text-decoration: none;
+    }
+
+.Products-List-PageButton-BackArrow {
+    transform: rotate(180deg);
+}

@@ -4,7 +4,7 @@ using System.Data;
 
 namespace HKTekstilWebshop.DBService.User
 {
-    public class RegisterUserModel
+    public class RegisterUserModel : IModel<RegisterUserInput, RegisterUserOutput>
     {
         public async Task<RegisterUserOutput> Execute(RegisterUserInput input)
         {

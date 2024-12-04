@@ -1,0 +1,4 @@
+﻿CREATE TYPE [Product].[PRO_SizeTableType] AS TABLE
+(
+    SizeID UNIQUEIDENTIFIER PRIMARY KEY
+)

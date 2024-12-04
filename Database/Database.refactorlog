@@ -84,4 +84,123 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="RC_PK" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="06f6097d-412d-4d3c-baef-88f345734e71" ChangeDateTime="11/20/2024 20:39:40">
+    <Property Name="ElementName" Value="[Product].[Category].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[Product].[Category]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="CA_PK" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="6c94e603-5f9c-4e4a-9443-7fe04d24ad02" ChangeDateTime="11/20/2024 20:41:00">
+    <Property Name="ElementName" Value="[Product].[Product].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[Product].[Product]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="PR_PK" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="84e43a86-b2fc-488d-93ce-fd994dd3caf3" ChangeDateTime="11/20/2024 20:41:29">
+    <Property Name="ElementName" Value="[Product].[Category].[Name]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[Product].[Category]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="CA_Name" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="8c7eac24-b776-42ab-899c-3c9ac9fa3221" ChangeDateTime="11/20/2024 20:41:31">
+    <Property Name="ElementName" Value="[Product].[Category].[Description]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[Product].[Category]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="CA_Description" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="14dfafdd-a32c-44bf-992a-9bc5cef5ca8f" ChangeDateTime="11/20/2024 20:47:35">
+    <Property Name="ElementName" Value="[Product].[PRO_Images].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[Product].[PRO_Images]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="IM_PK" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="96a31e3b-a6e7-4ae1-aa4c-53ead9685a4f" ChangeDateTime="11/20/2024 20:49:59">
+    <Property Name="ElementName" Value="[Product].[PRO_Color].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[Product].[PRO_Color]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="CO_PK" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="6f738c37-cf7e-4235-a434-0003bb831427" ChangeDateTime="11/20/2024 20:50:42">
+    <Property Name="ElementName" Value="[Product].[PRO_Size].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[Product].[PRO_Size]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="SI_PK" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="420c32eb-214e-4ea4-9b9f-cee04cceb9b9" ChangeDateTime="11/20/2024 20:51:28">
+    <Property Name="ElementName" Value="[Product].[PRO_ExtraChoice].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[Product].[PRO_ExtraChoice]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="EC_PK" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="52ed5d98-62d4-4c02-b195-c7eaeccb3704" ChangeDateTime="11/20/2024 20:52:58">
+    <Property Name="ElementName" Value="[Product].[PRO_ExtraChoiceOption].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[Product].[PRO_ExtraChoiceOption]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="EO_PK" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="0ad8f92d-5b8d-47b5-9faf-fd65656c6e2b" ChangeDateTime="11/20/2024 20:55:28">
+    <Property Name="ElementName" Value="[Product].[ColorProduct].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[Product].[ColorProduct]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="CP_PK" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="e3ec7f1a-fd0e-4ac3-bfd2-2724e2cb6fdb" ChangeDateTime="11/20/2024 21:00:41">
+    <Property Name="ElementName" Value="[Product].[PRO_SizeProduct].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[Product].[PRO_SizeProduct]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="SP_PK" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="d4db6b81-35ff-482d-a344-2efb5cc1ff2d" ChangeDateTime="11/20/2024 21:05:10">
+    <Property Name="ElementName" Value="[Product].[PRO_ExtraChoiceProduct].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[Product].[PRO_ExtraChoiceProduct]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="EP_PK" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="f80e0570-f100-4413-b3a5-ee7371103a5a" ChangeDateTime="11/20/2024 21:19:18">
+    <Property Name="ElementName" Value="[Product].[PRO_OrderItem].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[Product].[PRO_OrderItem]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="OI_PK" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="1c015e6a-3c5f-47b6-b3ab-1552294c798f" ChangeDateTime="11/20/2024 21:27:16">
+    <Property Name="ElementName" Value="[Product].[PRO_Status].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[Product].[PRO_Status]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ST_PK" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="58041a90-3700-4225-969d-c24c40fcd570" ChangeDateTime="11/20/2024 21:28:10">
+    <Property Name="ElementName" Value="[Product].[PRO_Order].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[Product].[PRO_Order]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="OR_PK" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="731009be-a54c-4958-acc5-de5c191f2fd1" ChangeDateTime="11/20/2024 21:44:06">
+    <Property Name="ElementName" Value="[Product].[PRO_ExtraChoiceOptionOrderItem].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[Product].[PRO_ExtraChoiceOptionOrderItem]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="EO_PK" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="34aae604-27db-4efa-b255-12508da3b55b" ChangeDateTime="12/04/2024 12:38:39">
+    <Property Name="ElementName" Value="[Product].[PRO_ExtraChoice].[EC_Reco]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[Product].[PRO_ExtraChoice]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="EC_RecognizableName" />
+  </Operation>
 </Operations>

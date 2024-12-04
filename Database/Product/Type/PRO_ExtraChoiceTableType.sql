@@ -1,0 +1,4 @@
+﻿CREATE TYPE [Product].[PRO_ExtraChoiceTableType] AS TABLE
+(
+	ExtraChoiceID UNIQUEIDENTIFIER PRIMARY KEY
+)

@@ -1,0 +1,10 @@
+﻿CREATE TABLE [Product].[PRO_ExtraChoiceOption]
+(
+	[EO_PK] UNIQUEIDENTIFIER NOT NULL PRIMARY KEY DEFAULT NEWID(), 
+    [EO_Name] NVARCHAR(MAX) NOT NULL, 
+    [EO_Description] NVARCHAR(MAX) NULL, 
+    [EO_ExtraPrice] FLOAT NULL, 
+    [EO_ExtraChoice] UNIQUEIDENTIFIER NOT NULL
+    CONSTRAINT EO_FK_ExtraChoice FOREIGN KEY (EO_ExtraChoice)
+    REFERENCES Product.PRO_ExtraChoice(EC_PK)
+)

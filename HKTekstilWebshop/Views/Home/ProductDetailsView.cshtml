@@ -1,0 +1,116 @@
+﻿@model HKTekstilWebshop.Models.ProductList.ProductDetailsViewModel
+
+@{
+    Layout = "_Layout";
+}
+
+@section head {
+    <link rel="stylesheet" href="~/css/Product/ProductDetails.css" />
+}
+
+<div class="Product-Detail-Main-Container">
+    <div class="Product-Detail-Main-InnerContainer">
+        <div class="Product-Detail-Button-Container">
+            <button class="Product-Detail-Button" id="BackButton" onclick="history.back()">Tilbage</button>
+        </div>
+        <div class="Product-Detail-Grid-Container">
+            <div class="Product-Detail-SmallImages-Container">
+                @foreach(var image in Model.Product.Images)
+                {
+                    <img class="Product-Detail-SmallImage" src="@image.ImageURL" />
+                }
+            </div>
+            <div class="Product-Detail-BigImage-Container">
+                <img class="Product-Detail-BigImage" src="@Model.Product.Images.First().ImageURL"/>
+            </div>
+            <div class="Product-Detail-FormContainer">
+                <form class="Product-Detail-Form">
+                    <div class="Product-Detail-Title-Container">
+                        <h4>
+                            @Model.Product.Name
+                        </h4>
+                        <p>
+                            @Model.Product.Organization.Name
+                        </p>
+                    </div>
+                    <div class="Product-Detail-Price-Container">
+                        <h4>
+                            @Model.Product.Price kr.
+                        </h4>
+                    </div>
+                    <div class="Product-Detail-Color-Container">
+                        <select class="Product-Detail-Input-Style" id="Product-Detail-Color-Dropdown" required>
+                            @foreach (var color in Model.Product.Colors)
+                            {
+                                <option value="@color.ID">@color.ColorName</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="Product-Detail-Size-Container">
+                        <select class="Product-Detail-Input-Style" id="Product-Detail-Size-Dropdown" required>
+                            @foreach (var size in Model.Product.Sizes)
+                            {
+                                <option value="@size.ID">@size.SizeName</option>
+                            }
+                        </select>
+                    </div>
+                    @if(Model.Product.ExtraChoices != null)
+                    {
+                        <div class="Product-Detail-ExtraChoiceList-Container">
+                            @foreach (var extraChoice in Model.Product.ExtraChoices)
+                            {
+                                <div class="Product-Detail-ExtraChoiceItem-Container">
+                                    <div class="Product-Detail-ExtraChoice-Title" id="@extraChoice.ID">
+                                        @extraChoice.Title
+                                    </div>
+
+                                    @{
+                                        int index = 0;
+                                    }
+
+                                    @foreach (var option in extraChoice.Options)
+                                    {
+                                        <div class="Product-Detail-Option-Container">
+                                            <input class="Product-Detail-Option-RadioButton" name="@extraChoice.Title" type="radio" id="@option.ID" value="@option.ID" @(index == 0 ? "checked" : "")>
+                                            <div class="Product-Detail-Option-Labels">
+                                                <label class="Product-Detail-Option-Name" for="@option.ID">@option.Name</label>
+                                                @if(!string.IsNullOrEmpty(option.Description))
+                                                {
+                                                    <label for="@option.ID" class="Product-Detail-Option-Description">
+                                                        @option.Description
+                                                    </label>
+                                                }
+                                                @if (option.ExtraPrice != null || option.ExtraPrice > 0)
+                                                {
+                                                    <label for="@option.ID" class="Product-Detail-Option-ExtraPrice" value="@option.ExtraPrice">
+                                                        @option.ExtraPrice kr.
+                                                    </label>
+                                                }
+                                            </div>
+                                        </div>
+                                        index++;
+                                    }
+                                </div>
+                            }
+                        </div>
+                    }
+                    <div class="Product-Detail-Bottom-Container">
+                        <select class="Product-Detail-Input-Style" id="Product-Detail-Quantity-Selector">
+                            @for(int i = 1; i<= 10; i++)
+                            {
+                                <option value="@i">@i</option>
+                            }
+                        </select>
+                        <button class="Product-Detail-Button" id="AddToCartButton">
+                            Tilføj til kurv
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/ProductDetails.js" type="module"></script>
+}

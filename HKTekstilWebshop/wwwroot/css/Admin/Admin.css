@@ -1,0 +1,90 @@
+﻿body {
+    min-height: 100vh;
+    background-color: var(--color-backgroundwhite);
+}
+
+.Admin-Main-Container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+}
+
+.Admin-Header-Main-Contianer {
+    background-color: var(--color-backgroundsecondary);
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    color: var(--color-white);
+    padding-left: var(--pad-xl);
+    padding-right: var(--pad-xl);
+}
+
+.Admin-Header-Titles-Container {
+    display: flex;
+    gap: var(--pad-xl);
+}
+
+.Admin-Dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+#Admin-Dropdown-Organization:hover #Admin-Dropdown-Content-Organization {
+    display:block;
+}
+
+#Admin-Dropdown-Product:hover #Admin-Dropdown-Content-Product {
+    display: block;
+}
+
+.Admin-Header-Title {
+    color: var(--color-white);
+    font-size: var(--fontsize-l);
+    font-weight: var(--fontweight-reg);
+    text-decoration: underline;
+    cursor: default;
+}
+
+.Admin-Dropdown-Content-Style {
+    display: none;
+    position: absolute;
+    background-color: var(--color-white);
+    box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
+    border-radius: var(--br-s);
+    min-width: 10rem;
+    z-index: 1;
+}
+
+.Admin-Dropdown-Option {
+    color: var(--color-black);
+    width: 100%;
+    text-decoration: none;
+    display: block;
+    padding: var(--pad-xs);
+}
+
+    .Admin-Dropdown-Option:hover {
+        color: var(--color-black);
+        background-color: var(--color-backgroundwhite);
+        border-radius: var(--br-s);
+    }
+
+.Admin-Partial-Container {
+    display: flex;
+    flex-grow: 1;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.Admin-Placeholder {
+    text-align: center;
+}
+
+    .Admin-Placeholder h3 {
+        font-size: var(--fontsize-xl);
+        font-weight: var(--fontweight-semibold);
+    }

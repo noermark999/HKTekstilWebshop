@@ -1,0 +1,64 @@
+﻿@model HKTekstilWebshop.Models.ProductList.ProductListViewModel
+
+@{
+    Layout = "_Layout";
+}
+
+@section head {
+    <link rel="stylesheet" href="~/css/Product/ProductList.css" />
+}
+
+<div class="Products-MainContainer">
+    <div class="Products-Top-ImageTitle-Container">
+        <div class="Products-Top-Text-Container">
+            <h1>
+                HK TEKSTIL
+            </h1>
+            <h3>
+                Web Shop
+            </h3>
+        </div>
+    </div>
+    <div class="Products-List-Bottom-Container">
+        <div class="Products-List-Title-Container">
+            <h1>
+                Alle Varer
+            </h1>
+        </div>
+        <div class="Products-List-Container">
+            @foreach (var product in Model.products)
+            {
+                <div class="Products-List-Item-Container" id="@product.ID">
+                    <img class="Products-List-Item-Image" src="@product.MainImage.ImageURL" />
+                    <p class="Products-List-Item-Organization">@product.Organization.Name</p>
+                    <p class="Products-List-Item-ProductTitle">@product.Name</p>
+                    <p class="Products-List-Item-ProductPrice">@product.Price kr.</p>
+                </div>
+            }
+        </div>
+        <div class="Products-List-PageButton-Container">
+            @if(Model.CurrentPage > 1)
+            {
+                <a href="/produkter&side=@(Model.CurrentPage-1)" class="Products-List-PageButton" id="BackOnePage">
+                    <img class="Products-List-PageButton-BackArrow" src="~/Resources/ProductList/PRO_Arrow.svg"/>
+                </a>
+            }
+            @for(int i = 1; i <= Model.MaxPages; i++)
+            {
+                <a href="/produkter&side=@i" class="Products-List-PageButton" id="PageNumber-@i">
+                    @i
+                </a>
+            }
+            @if (Model.CurrentPage < Model.MaxPages)
+            {
+                <a href="/produkter&side=@(Model.CurrentPage+1)" class="Products-List-PageButton" id="ForwardOnePage">
+                    <img class="Products-List-PageButton-ForwardArrow" src="~/Resources/ProductList/PRO_Arrow.svg" />
+                </a>
+            }
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/ProductList.js" type="module"></script>
+}

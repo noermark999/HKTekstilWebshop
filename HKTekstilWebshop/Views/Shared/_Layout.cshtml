@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using HKTekstilWebshop.Service;
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -37,6 +39,10 @@
             @if (User.Identity.IsAuthenticated)
             {
                 <div class="Header-Right-Container">
+                    @if (ClaimsService.IsAdmin(User))
+                    {
+                        <button class="Header-Button-Style" id="Header-Admin">Admin</button>
+                    }
                     <button class="Header-Button-Style" id="Header-Signout">Log ud</button>
                     <img class="Header-Small-Logo" id="Header-ShoppingCart-Button" src="~/Resources/Header/HeaderShoppingBag.svg" />
                 </div>

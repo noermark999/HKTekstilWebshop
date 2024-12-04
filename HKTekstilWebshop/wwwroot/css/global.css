@@ -29,27 +29,39 @@
 :root {
     /* FONT */
     --font: "Inter", sans-serif;
-
     --fontweight-reg: 400;
-
+    --fontweight-semibold: 600;
+    --fontweight-bold: 700;
     --fontsize-s: 0.875rem;
     --fontsize-m: 1rem;
-
+    --fontsize-l: 1.25rem;
+    --fontsize-xl: 1.5rem;
+    --fontsize-2xl: 2rem;
+    --fontsize-4xl: 4.5rem;
     /* COLORS */
     --color-background: #043148;
     --color-backgroundwhite: #F5F5F5;
+    --color-backgroundsecondary: #334A6B;
     --color-input: #032232;
     --color-button: #2C2C2C;
+    --color-radiobutton: #1E1E1E;
     --color-white: #FFFFFF;
+    --color-lightgray: #757575;
+    --color-black: #000000;
     --color-error: #ff0000;
     /* PADDING */
+    --pad-xs: 0.5rem;
     --pad-m: 1rem;
     --pad-l: 1.5rem;
     --pad-xl: 2rem;
+    --pad-2xl: 3.125rem;
+    --pad-4xl: 6.25rem;
     /* GAP */
     --gap-xs: 0.5rem;
     --gap-s: 0.75rem;
+    --gap-m: 1rem;
     --gap-l: 1.5rem;
+    --gap-2xl: 3.125rem;
     --gap-4xl: 6.25rem;
     /* BORDER RADIUS */
     --br-s: 0.5rem;

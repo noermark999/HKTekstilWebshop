@@ -1,0 +1,4 @@
+﻿CREATE TYPE [Product].[PRO_ColorTableType] AS TABLE
+(
+	ColorID UNIQUEIDENTIFIER PRIMARY KEY
+)

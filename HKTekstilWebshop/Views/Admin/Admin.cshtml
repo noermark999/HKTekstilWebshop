@@ -1,0 +1,45 @@
+﻿@{
+    Layout = "_Layout";
+}
+
+@section head {
+    <link rel="stylesheet" href="~/css/Admin/Admin.css" />
+}
+
+<div class="Admin-Main-Container">
+    <div class="Admin-Header-Main-Contianer">
+        <div class="Admin-Header-Titles-Container">
+            <div class="Admin-Dropdown" id="Admin-Dropdown-Organization">
+                <div class="Admin-Header-Title">
+                    Organisation
+                </div>
+                <div class="Admin-Dropdown-Content-Style" id="Admin-Dropdown-Content-Organization">
+                    <a href="/Admin/AddOrganization" class="Admin-Dropdown-Option">Opret organisation</a>
+                    <a href="/Admin/AddRegisterCode" class="Admin-Dropdown-Option">Oprettelseskode</a>
+                </div>
+            </div>
+            <div class="Admin-Dropdown" id="Admin-Dropdown-Product">
+                <div class="Admin-Header-Title">
+                    Produkt
+                </div>
+                <div class="Admin-Dropdown-Content-Style" id="Admin-Dropdown-Content-Product">
+                    <a href="/Admin/AddProduct" class="Admin-Dropdown-Option">Opret produkt</a>
+                    <a href="/Admin/AddCategory" class="Admin-Dropdown-Option">Opret varekategori</a>
+                    <a href="/Admin/AddColor" class="Admin-Dropdown-Option">Opret farve</a>
+                    <a href="/Admin/AddSize" class="Admin-Dropdown-Option">Opret størrelse</a>
+                    <a href="/Admin/AddExtraChoice" class="Admin-Dropdown-Option">Opret ekstra valg</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="Admin-Partial-Container">
+        <div class="Admin-Placeholder">
+            <h3>Velkommen til administrator siden</h3>
+            <h3>Vælg en kategori</h3>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/Admin.js" type="module"></script>
+}

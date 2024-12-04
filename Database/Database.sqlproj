@@ -63,6 +63,10 @@
     <Folder Include="Organization\Tables" />
     <Folder Include="Organization\Procedures" />
     <Folder Include="User\Procedures" />
+    <Folder Include="Product" />
+    <Folder Include="Product\Tables" />
+    <Folder Include="Product\Procedures" />
+    <Folder Include="Product\Type" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="User\Tables\USE_User.sql" />
@@ -76,6 +80,42 @@
     <Build Include="User\Procedures\SP_USE_RegisterUser.sql" />
     <Build Include="User\Procedures\SP_USE_GetUserLogin.sql" />
     <Build Include="User\Procedures\SP_USE_GetUserInfo.sql" />
+    <Build Include="Product\ProductSchema.sql" />
+    <Build Include="Product\Tables\PRO_Category.sql" />
+    <Build Include="Product\Tables\PRO_Product.sql" />
+    <Build Include="Product\Tables\PRO_Images.sql" />
+    <Build Include="Product\Tables\PRO_Color.sql" />
+    <Build Include="Product\Tables\PRO_Size.sql" />
+    <Build Include="Product\Tables\PRO_ExtraChoice.sql" />
+    <Build Include="Product\Tables\PRO_ExtraChoiceOption.sql" />
+    <Build Include="Product\Tables\PRO_ColorProduct.sql" />
+    <Build Include="Product\Tables\PRO_SizeProduct.sql" />
+    <Build Include="Product\Tables\PRO_ExtraChoiceProduct.sql" />
+    <Build Include="Product\Tables\PRO_OrderItem.sql" />
+    <Build Include="Product\Tables\PRO_Order.sql" />
+    <Build Include="Product\Tables\PRO_Status.sql" />
+    <Build Include="Product\Tables\PRO_ExtraChoiceOptionOrderItem.sql" />
+    <Build Include="Product\Procedures\SP_PRO_AddCategory.sql" />
+    <Build Include="Product\Procedures\SP_PRO_AddColor.sql" />
+    <Build Include="Product\Procedures\SP_PRO_AddExtraChoice.sql" />
+    <Build Include="Product\Type\PRO_ColorTableType.sql" />
+    <Build Include="Product\Type\PRO_SizeTableType.sql" />
+    <Build Include="Product\Type\PRO_ImageTableType.sql" />
+    <Build Include="Product\Type\PRO_ExtraChoiceOptionTableType.sql" />
+    <Build Include="Product\Procedures\SP_PRO_AddProduct.sql" />
+    <Build Include="Product\Type\PRO_ExtraChoiceTableType.sql" />
+    <Build Include="Product\Procedures\SP_PRO_AddOrder.sql" />
+    <Build Include="Product\Procedures\SP_PRO_AddOrderItem.sql" />
+    <Build Include="Product\Procedures\SP_PRO_AddSize.sql" />
+    <Build Include="Product\Procedures\SP_PRO_AddStatus.sql" />
+    <Build Include="Product\Procedures\SP_PRO_GetPagedProductsForOrganization.sql" />
+    <Build Include="Product\Procedures\SP_PRO_GetProductDetails.sql" />
+    <Build Include="Organization\Procedures\SP_ORG_GetRegisterCodesForOrganization.sql" />
+    <Build Include="Organization\Procedures\SP_ORG_DeleteRegisterCode.sql" />
+    <Build Include="Product\Procedures\SP_PRO_GetCategories.sql" />
+    <Build Include="Product\Procedures\SP_PRO_GetColors.sql" />
+    <Build Include="Product\Procedures\SP_PRO_GetExtraChoices.sql" />
+    <Build Include="Product\Procedures\SP_PRO_GetSizes.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="Database.refactorlog" />
