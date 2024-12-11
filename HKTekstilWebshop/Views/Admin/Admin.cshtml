@@ -4,6 +4,7 @@
 
 @section head {
     <link rel="stylesheet" href="~/css/Admin/Admin.css" />
+    <link rel="stylesheet" href="~/css/Admin/Partials.css" />
 }
 
 <div class="Admin-Main-Container">
@@ -14,8 +15,8 @@
                     Organisation
                 </div>
                 <div class="Admin-Dropdown-Content-Style" id="Admin-Dropdown-Content-Organization">
-                    <a href="/Admin/AddOrganization" class="Admin-Dropdown-Option">Opret organisation</a>
-                    <a href="/Admin/AddRegisterCode" class="Admin-Dropdown-Option">Oprettelseskode</a>
+                    <div id="AddOrganization" apiurl="/admin/addorganization" class="Admin-Dropdown-Option">Opret organisation</div>
+                    <div id="AddRegisterCode" apiurl="/admin/addregistercode" class="Admin-Dropdown-Option">Oprettelseskode</div>
                 </div>
             </div>
             <div class="Admin-Dropdown" id="Admin-Dropdown-Product">
@@ -23,16 +24,16 @@
                     Produkt
                 </div>
                 <div class="Admin-Dropdown-Content-Style" id="Admin-Dropdown-Content-Product">
-                    <a href="/Admin/AddProduct" class="Admin-Dropdown-Option">Opret produkt</a>
-                    <a href="/Admin/AddCategory" class="Admin-Dropdown-Option">Opret varekategori</a>
-                    <a href="/Admin/AddColor" class="Admin-Dropdown-Option">Opret farve</a>
-                    <a href="/Admin/AddSize" class="Admin-Dropdown-Option">Opret størrelse</a>
-                    <a href="/Admin/AddExtraChoice" class="Admin-Dropdown-Option">Opret ekstra valg</a>
+                    <div id="AddProduct" apiurl="/admin/addproduct" class="Admin-Dropdown-Option">Opret produkt</div>
+                    <div id="AddCategory" apiurl="/admin/addcategory" class="Admin-Dropdown-Option">Opret varekategori</div>
+                    <div id="AddColor" apiurl="/admin/addcolor" class="Admin-Dropdown-Option">Opret farve</div>
+                    <div id="AddSize" apiurl="/admin/addsize" class="Admin-Dropdown-Option">Opret størrelse</div>
+                    <div id="AddExtraChoice" apiurl="/admin/addextrachoice" class="Admin-Dropdown-Option">Opret ekstra valg</div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="Admin-Partial-Container">
+    <div id="Admin-Partial-Container">
         <div class="Admin-Placeholder">
             <h3>Velkommen til administrator siden</h3>
             <h3>Vælg en kategori</h3>

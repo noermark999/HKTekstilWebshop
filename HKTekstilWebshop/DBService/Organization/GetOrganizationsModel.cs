@@ -4,9 +4,9 @@ using System.Data;
 
 namespace HKTekstilWebshop.DBService.Organization
 {
-    public class GetOrganizationsModel : IModel<GetOrganizationInput, GetOrganizationOutput>
+    public class GetOrganizationsModel : IModel<GetOrganizationsInput, GetOrganizationsOutput>
     {
-        public async Task<GetOrganizationOutput> Execute(GetOrganizationInput input)
+        public async Task<GetOrganizationsOutput> Execute(GetOrganizationsInput input)
         {
             using (SqlConnection connection = new SqlConnection(ConfigManager.ConnectionString))
             {
@@ -17,7 +17,7 @@ namespace HKTekstilWebshop.DBService.Organization
 
                     SqlDataReader reader = await command.ExecuteReaderAsync();
 
-                    var output = new GetOrganizationOutput();
+                    var output = new GetOrganizationsOutput();
 
                     List<APIModels.Shared.Organization.Organization> organizations = new List<APIModels.Shared.Organization.Organization>();
 

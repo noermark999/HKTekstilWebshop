@@ -1,0 +1,29 @@
+﻿@model HKTekstilWebshop.Models.Admin.AddCategoryViewModel
+
+<div class="Admin-Partial-Main-Container">
+    <div class="Admin-Partial-Box-Container">
+        <h2 class="Admin-Partial-Title">Opret Kategori</h2>
+        <form id="Admin-Partial-Form" class="Admin-Partial-Form-Style">
+            <div class="Admin-Partial-Input-Container">
+                <label>Kategorinavn</label>
+                <input class="Admin-Partial-Input-Style" id="Category-Name" required />
+            </div>
+            <div class="Admin-Partial-Input-Container">
+                <label>Beskrivelse</label>
+                <textarea class="Admin-Partial-Input-Style Admin-Partial-Textarea-Style" id="Category-Description" required></textarea>
+            </div>
+            <button class="Admin-Partial-Button-Style" id="Admin-Partial-Button-Create">Opret</button>
+        </form>
+    </div>
+    <div class="Admin-Partial-Box-Container">
+        <h2 class="Admin-Partial-Title">Alle Kategorier</h2>
+        <div class="Admin-Partial-List-Container">
+            @foreach (var category in Model.categories)
+            {
+                <div class="Admin-Partial-List-Element" id="@category.ID">
+                    @category.Name
+                </div>
+            }
+        </div>
+    </div>
+</div>

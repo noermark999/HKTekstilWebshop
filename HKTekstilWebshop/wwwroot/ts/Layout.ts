@@ -5,6 +5,7 @@
 enum ID_NAMES {
     LOGOUT_BTN = 'Header-Signout',
     ADMIN_BTN = 'Header-Admin',
+    HEADER_LOGO = 'Header-Logo-id',
 }
 
 enum API_URLS {
@@ -28,6 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (adminBtn) {
         initializeAdminButton()
     }
+    InitializeLogo()
 });
 
 function initializeLogoutButton() {
@@ -51,5 +53,12 @@ function initializeLogoutButton() {
 function initializeAdminButton() {
     adminBtn.addEventListener('click', async () => {
         window.location.href = API_URLS.ADMIN;
+    })
+}
+
+function InitializeLogo() {
+    let logo = document.getElementById(ID_NAMES.HEADER_LOGO) as HTMLImageElement
+    logo.addEventListener('click', () => {
+        window.location.href = '/'
     })
 }

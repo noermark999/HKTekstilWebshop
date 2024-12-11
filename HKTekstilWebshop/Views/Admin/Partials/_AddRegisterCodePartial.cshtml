@@ -1,0 +1,30 @@
+﻿@model HKTekstilWebshop.Models.Admin.AddRegisterCodeViewModel
+
+<div class="Admin-Partial-Main-Container">
+    <div class="Admin-Partial-Box-Container">
+        <h2 class="Admin-Partial-Title">Opret Registreringskode</h2>
+        <form id="Admin-Partial-Form" class="Admin-Partial-Form-Style">
+            <div class="Admin-Partial-Input-Container">
+                <label>Find virksomhed/efterskole</label>
+                <select class="Admin-Partial-Input-Style" id="Organization-Dropdown" required>
+                    <option value="" disabled selected>Vælg organisation</option>
+                    @foreach (var organization in Model.Organizations)
+                    {
+                        <option value="@organization.ID">@organization.Name</option>
+                    }
+                </select>
+            </div>
+            <div class="Admin-Partial-Input-Container">
+                <label>Kode</label>
+                <input class="Admin-Partial-Input-Style" id="Admin-Partial-RegisterCode-Input" required />
+            </div>
+            <button class="Admin-Partial-Button-Style" id="Admin-Partial-Button-Create">Opret</button>
+        </form>
+    </div>
+    <div class="Admin-Partial-Box-Container">
+        <h3 class="Admin-Partial-Title">Registreringskoder for virksomhed</h3>
+        <div class="Admin-Partial-List-Container" id="Admin-Partial-List-Container-id">
+
+        </div>
+    </div>
+</div>

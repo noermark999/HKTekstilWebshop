@@ -19,4 +19,12 @@
     <ProjectReference Include="..\APIModels\APIModels.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Views\Admin\Partials\_AddOrganizationPartial.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Views\Admin\Partials\_AddOrganizationPartial.cshtml" />
+  </ItemGroup>
+
 </Project>

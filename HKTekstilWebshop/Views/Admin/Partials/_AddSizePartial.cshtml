@@ -1,0 +1,25 @@
+﻿@model HKTekstilWebshop.Models.Admin.AddSizeViewModel
+
+<div class="Admin-Partial-Main-Container">
+    <div class="Admin-Partial-Box-Container">
+        <h2 class="Admin-Partial-Title">Opret størrelse</h2>
+        <form id="Admin-Partial-Form" class="Admin-Partial-Form-Style">
+            <div class="Admin-Partial-Input-Container">
+                <label>Størrelse</label>
+                <input class="Admin-Partial-Input-Style" id="Admin-Partial-Size-Input" required />
+            </div>
+            <button class="Admin-Partial-Button-Style" id="Admin-Partial-Button-Create">Opret</button>
+        </form>
+    </div>
+    <div class="Admin-Partial-Box-Container">
+        <h2 class="Admin-Partial-Title">Alle Størrelser</h2>
+        <div class="Admin-Partial-List-Container">
+            @foreach (var size in Model.sizes)
+            {
+                <div class="Admin-Partial-List-Element" id="@size.ID">
+                    @size.SizeName
+                </div>
+            }
+        </div>
+    </div>
+</div>

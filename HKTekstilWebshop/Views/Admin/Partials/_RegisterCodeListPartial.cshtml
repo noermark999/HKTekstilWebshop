@@ -1,0 +1,7 @@
+﻿@model HKTekstilWebshop.Models.Admin.AddRegisterCodeViewModel
+@foreach (var registerCode in Model.RegisterCodes)
+{
+    <div class="Admin-Partial-List-Element" id="@registerCode.ID">
+        @registerCode.Code
+    </div>
+}

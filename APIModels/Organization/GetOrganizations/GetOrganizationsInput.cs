@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace APIModels.Organization.GetOrganizations
 {
-    public class GetOrganizationInput
+    public class GetOrganizationsInput
     {
     }
 }

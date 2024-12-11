@@ -1,0 +1,37 @@
+﻿@model HKTekstilWebshop.Models.Admin.AddOrganizationViewModel
+
+<div class="Admin-Partial-Main-Container">
+    <div class="Admin-Partial-Box-Container">
+        <h2 class="Admin-Partial-Title">Opret organisation</h2>
+        <form id="Admin-Partial-Form" class="Admin-Partial-Form-Style">
+            <div class="Admin-Partial-Input-Container">
+                <label>Navn</label>
+                <input class="Admin-Partial-Input-Style" id="Organization-Name" required />
+            </div>
+            <div class="Admin-Partial-Input-Container">
+                <label>Addresse</label>
+                <input class="Admin-Partial-Input-Style" id="Organization-Address" required />
+            </div>
+            <div class="Admin-Partial-Input-Container">
+                <label>Kontakt email</label>
+                <input class="Admin-Partial-Input-Style" id="Organization-Contact-Email" type="email" required />
+            </div>
+            <div class="Admin-Partial-Input-Container">
+                <label>Kontakt telefonnummer</label>
+                <input class="Admin-Partial-Input-Style" id="Organization-Contact-Phonenumber" type="tel" required />
+            </div>
+            <button class="Admin-Partial-Button-Style" id="Admin-Partial-Button-Create">Opret</button>
+        </form>
+    </div>
+    <div class="Admin-Partial-Box-Container">
+        <h2 class="Admin-Partial-Title">Alle Organisationer</h2>
+        <div class="Admin-Partial-List-Container">
+            @foreach(var organization in Model.Organizations)
+            {
+                <div class="Admin-Partial-List-Element" id="@organization.ID">
+                    @organization.Name
+                </div>
+            }
+        </div>
+    </div>
+</div>

@@ -1,0 +1,64 @@
+﻿.Admin-Partial-Main-Container {
+    display: flex;
+    gap: var(--gap-m);
+}
+
+.Admin-Partial-Box-Container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-l);
+    width: 20rem;
+    background-color: var(--color-background);
+    color: var(--color-white);
+    border-radius: var(--br-s);
+    box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
+    padding: var(--pad-l);
+    height: fit-content;
+}
+
+.Admin-Partial-Title {
+
+}
+
+.Admin-Partial-Form-Style {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-l);
+}
+
+.Admin-Partial-Input-Container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-xs);
+}
+
+.Admin-Partial-Input-Style {
+    background-color: var(--color-input);
+    color: var(--color-white);
+    border: none;
+    border-radius: var(--br-s);
+    height: 2.5rem;
+    padding-left: var(--pad-m);
+    padding-right: var(--pad-m);
+}
+
+    .Admin-Partial-Input-Style:focus {
+        outline: none;
+    }
+
+.Admin-Partial-Textarea-Style {
+    height: 10rem;
+    padding-top: var(--pad-xs);
+    padding-bottom: var(--pad-xs);
+    resize: none;
+}
+
+.Admin-Partial-Button-Style {
+    height: 2.5rem;
+    width: 100%;
+    color: var(--color-white);
+    background-color: var(--color-button);
+    border-radius: var(--br-s);
+    border: none;
+    cursor: pointer;
+}

@@ -1,0 +1,25 @@
+﻿@model HKTekstilWebshop.Models.Admin.AddColorViewModel
+
+<div class="Admin-Partial-Main-Container">
+    <div class="Admin-Partial-Box-Container">
+        <h2 class="Admin-Partial-Title">Opret Farve</h2>
+        <form id="Admin-Partial-Form" class="Admin-Partial-Form-Style">
+            <div class="Admin-Partial-Input-Container">
+                <label>Farvenavn</label>
+                <input class="Admin-Partial-Input-Style" id="Color-Name" required />
+            </div>
+            <button class="Admin-Partial-Button-Style" id="Admin-Partial-Button-Create">Opret</button>
+        </form>
+    </div>
+    <div class="Admin-Partial-Box-Container">
+        <h2 class="Admin-Partial-Title">Alle Farver</h2>
+        <div class="Admin-Partial-List-Container">
+            @foreach (var color in Model.Colors)
+            {
+                <div class="Admin-Partial-List-Element" id="@color.ID">
+                    @color.ColorName
+                </div>
+            }
+        </div>
+    </div>
+</div>

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace APIModels.Organization.GetOrganizations
 {
-    public class GetOrganizationOutput
+    public class GetOrganizationsOutput
     {
         public List<APIModels.Shared.Organization.Organization>? Organizations { get; set; }
     }

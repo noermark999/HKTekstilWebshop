@@ -17,6 +17,8 @@ namespace HKTekstilWebshop.DBService.Organization
                 {
                     command.CommandType = CommandType.StoredProcedure;
 
+                    command.Parameters.Add(new SqlParameter("@Organization", input.Organization));
+
                     SqlDataReader reader = await command.ExecuteReaderAsync();
 
                     var output = new GetRegisterCodesForOrganizationOutput();

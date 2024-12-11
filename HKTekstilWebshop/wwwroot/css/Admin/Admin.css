@@ -64,6 +64,7 @@
     text-decoration: none;
     display: block;
     padding: var(--pad-xs);
+    cursor: pointer;
 }
 
     .Admin-Dropdown-Option:hover {
@@ -72,7 +73,7 @@
         border-radius: var(--br-s);
     }
 
-.Admin-Partial-Container {
+#Admin-Partial-Container {
     display: flex;
     flex-grow: 1;
     height: 100%;

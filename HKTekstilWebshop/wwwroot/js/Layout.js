@@ -5,6 +5,7 @@ var ID_NAMES;
 (function (ID_NAMES) {
     ID_NAMES["LOGOUT_BTN"] = "Header-Signout";
     ID_NAMES["ADMIN_BTN"] = "Header-Admin";
+    ID_NAMES["HEADER_LOGO"] = "Header-Logo-id";
 })(ID_NAMES || (ID_NAMES = {}));
 var API_URLS;
 (function (API_URLS) {
@@ -24,6 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (adminBtn) {
         initializeAdminButton();
     }
+    InitializeLogo();
 });
 function initializeLogoutButton() {
     logoutBtn.addEventListener('click', async () => {
@@ -46,6 +48,12 @@ function initializeLogoutButton() {
 function initializeAdminButton() {
     adminBtn.addEventListener('click', async () => {
         window.location.href = API_URLS.ADMIN;
+    });
+}
+function InitializeLogo() {
+    let logo = document.getElementById(ID_NAMES.HEADER_LOGO);
+    logo.addEventListener('click', () => {
+        window.location.href = '/';
     });
 }
 export {};

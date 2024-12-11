@@ -28,7 +28,7 @@ namespace HKTekstilWebshop.Controllers
 
         private async Task<List<Organization>> GetOrganizations()
         {
-            var input = new GetOrganizationInput();
+            var input = new GetOrganizationsInput();
             var output = await _organizationsModel.Execute(input);
             return output.Organizations;
         }
