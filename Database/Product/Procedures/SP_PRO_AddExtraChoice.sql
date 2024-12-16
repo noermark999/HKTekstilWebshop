@@ -1,5 +1,6 @@
 ﻿CREATE PROCEDURE [Product].[SP_PRO_AddExtraChoice]
     @Title NVARCHAR(MAX),
+    @RecognizableName NVARCHAR(MAX),
     @OptionList [Product].[PRO_ExtraChoiceOptionTableType] READONLY
 AS
 BEGIN
@@ -12,9 +13,9 @@ BEGIN
     BEGIN TRY
         BEGIN TRANSACTION;
 
-        INSERT INTO [Product].[PRO_ExtraChoice] (EC_Title)
+        INSERT INTO [Product].[PRO_ExtraChoice] (EC_Title, EC_RecognizableName)
         OUTPUT inserted.EC_PK INTO @InsertedIDs(ID)
-        VALUES (@Title);
+        VALUES (@Title, @RecognizableName);
 
         SELECT @NewExtraChoiceID = ID FROM @InsertedIDs;
 

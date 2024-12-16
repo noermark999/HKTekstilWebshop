@@ -29,7 +29,9 @@
             @foreach (var product in Model.products)
             {
                 <div class="Products-List-Item-Container" id="@product.ID">
-                    <img class="Products-List-Item-Image" src="@product.MainImage.ImageURL" />
+                    <div class="Products-List-Item-Image-Container">
+                        <img class="Products-List-Item-Image" src="@product.MainImage.ImageURL" />
+                    </div>
                     <p class="Products-List-Item-Organization">@product.Organization.Name</p>
                     <p class="Products-List-Item-ProductTitle">@product.Name</p>
                     <p class="Products-List-Item-ProductPrice">@product.Price kr.</p>

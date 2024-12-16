@@ -17,6 +17,7 @@ namespace HKTekstilWebshop.DBService.Product
                     command.CommandType = CommandType.StoredProcedure;
 
                     command.Parameters.Add(new SqlParameter("@Title", input.Title));
+                    command.Parameters.Add(new SqlParameter("@RecognizableName", input.RecognizableName));
                     command.Parameters.Add(new SqlParameter("@OptionList", input.OptionList));
 
                     await command.ExecuteNonQueryAsync();

@@ -1,0 +1,56 @@
+﻿@model HKTekstilWebshop.Models.Admin.AddExtraChoiceViewModel
+
+<div class="Admin-Partial-Main-Container">
+    <div class="Admin-Partial-Box-Container">
+        <h2 class="Admin-Partial-Title">Opret Ekstravalg</h2>
+        <form id="Admin-Partial-Form" class="Admin-Partial-Form-Style">
+            <div class="Admin-Partial-Input-Container">
+                <label>Titel</label>
+                <input class="Admin-Partial-Input-Style" id="ExtraChoice-Title" required />
+            </div>
+            <div class="Admin-Partial-Input-Container">
+                <label>Unikt genkendeligt navn</label>
+                <input class="Admin-Partial-Input-Style" id="ExtraChoice-RecognizableName" required />
+            </div>
+            <div class="Admin-Partial-Input-Container">
+                <label>Tilføjede valgmuligheder</label>
+                <div id="Admin-Partial-ExtraChoiceOption-List"></div>
+            </div>
+            <button class="Admin-Partial-Button-Style" id="Admin-Partial-Button-ExtraOption">Tilføj valgmulighed</button>
+            <button class="Admin-Partial-Button-Style" id="Admin-Partial-Button-Create">Opret</button>
+        </form>
+    </div>
+    <div class="Admin-Partial-Box-Container">
+        <h2 class="Admin-Partial-Title">Alle Ekstravalg</h2>
+        <div class="Admin-Partial-List-Container">
+            @foreach (var ec in Model.extraChoices)
+            {
+                <div class="Admin-Partial-List-Element" id="@ec.ID">
+                    @ec.RecognizableName
+                </div>
+            }
+        </div>
+    </div>
+</div>
+<div class="Hide" id="Admin-Partial-Popup-Container">
+    <div class="Admin-Partial-Popup-TopContainer">
+        <h3 class="Admin-Partial-Title">Opret Valgmulighed</h3>
+        <img id="Admin-Partial-Popup-Close" src="~/Resources/Global/Cross.svg" />
+    </div>
+    <form class="Admin-Partial-Form-Style" id="Admin-Partial-ExtraOption-Form">
+        <div class="Admin-Partial-Input-Container">
+            <label>Navn</label>
+            <input class="Admin-Partial-Input-Style" id="ExtraOption-Name" required />
+        </div>
+        <div class="Admin-Partial-Input-Container">
+            <label>Beskrivelse (Kan være tom)</label>
+            <input class="Admin-Partial-Input-Style" id="ExtraOption-Description" />
+        </div>
+        <div class="Admin-Partial-Input-Container">
+            <label>Ekstra pris (Kan være tom)</label>
+            <input class="Admin-Partial-Input-Style" id="ExtraOption-ExtraPrice" type="number" />
+        </div>
+        <button class="Admin-Partial-Button-Style" id="Admin-Partial-Button-ExtraOption-Add">Tilføj</button>
+    </form>
+</div>
+<div id="Overlay" class="Hide"></div>

@@ -1,6 +1,7 @@
 ﻿enum CLASS_NAMES {
     DROPDOWN_CONTAINER = 'Admin-Dropdown',
     DROPDOWN_OPTION = 'Admin-Dropdown-Option',
+    HIDE = 'Hide',
 }
 
 enum ID_NAMES {
@@ -21,11 +22,31 @@ enum ID_NAMES {
     CREATE_COLOR_INPUT = 'Color-Name',
     CATEGORY_NAME_INPUT = 'Category-Name',
     CATEGORY_DESCRIPTION_TEXTAREA = 'Category-Description',
+    EXTRACHOICE_OPEN_POPUP_BUTTON = 'Admin-Partial-Button-ExtraOption',
+    EXTRACHOICE_POPUP_CONTAINER = 'Admin-Partial-Popup-Container',
+    EXTRACHOICE_ADD_OPTION_BUTTON = 'Admin-Partial-Button-ExtraOption-Add',
+    EXTRACHOICE_OPTION_NAME = 'ExtraOption-Name',
+    EXTRACHOICE_OPTION_DESCRIPTION = 'ExtraOption-Description',
+    EXTRACHOICE_OPTION_PRICE = 'ExtraOption-ExtraPrice',
+    EXTRACHOICE_FORM = 'Admin-Partial-ExtraOption-Form',
+    EXTRACHOICE_POPUP_CLOSE_BUTTON = 'Admin-Partial-Popup-Close',
+    EXTRACHOICE_OPTION_LIST = 'Admin-Partial-ExtraChoiceOption-List',
+    EXTRACHOICE_TITLE = 'ExtraChoice-Title',
+    EXTRACHOICE_RECOGNIZABLENAME = 'ExtraChoice-RecognizableName',
     ORG_NAME = 'Organization-Name',
     ORG_ADDRESS = 'Organization-Address',
     ORG_CONTACTEMAIL = 'Organization-Contact-Email',
     ORG_CONTACTPHONENUMBER = 'Organization-Contact-Phonenumber',
-
+    PRODUCT_NAME = 'Product-Name',
+    PRODUCT_PRICE = 'Product-Price',
+    PRODUCT_ORGANIZATION = 'Product-Organization',
+    PRODUCT_CATEGORY = 'Product-Category',
+    PRODUCT_IMAGES = 'Product-Images',
+    PRODUCT_SIZES = 'Product-Sizes',
+    PRODUCT_EXTRACHOICES = 'Product-ExtraChoices',
+    PRODUCT_COLORS = 'Product-Colors',
+    PRODUCT_DESCRIPTION = 'Product-Description',
+    OVERLAY = 'Overlay',
 }
 
 enum URLS {
@@ -34,6 +55,8 @@ enum URLS {
     AddCategory = '/admin/addcategory',
     AddSize = '/admin/addsize',
     AddColor = '/admin/addcolor',
+    AddExtraChoice = '/admin/addextrachoice',
+    AddProduct = '/admin/addproduct'
 }
 
 function CreateApiURL(url: string) {
@@ -48,6 +71,9 @@ function GetRegisterCodesForOrganizationURL(ID) {
 let PartialContainer: HTMLElement
 let createbutton: HTMLButtonElement
 let organizationDropdown: HTMLSelectElement
+let popupContainer: HTMLElement
+let overlay: HTMLElement
+let ExtraChoiceOptions: { Name: string, Description: string, ExtraPrice: number }[] = []
 
 document.addEventListener('DOMContentLoaded', function () {
     PartialContainer = document.getElementById(ID_NAMES.PARTIAL_CONTAINER)
@@ -79,6 +105,29 @@ async function CreateObjectFromData(url: string, data) {
 
     } catch (error) {
         alert(error)
+    }
+}
+
+async function CreateObjectFromFormData(url: string, data: FormData) {
+    let createAPIURL = CreateApiURL(url);
+
+    try {
+        const response = await fetch(createAPIURL, {
+            method: 'POST',
+            body: data 
+        });
+
+        if (!response.ok) {
+            const errorData = await response.text();
+            alert(errorData || response.statusText);
+        }
+
+        setTimeout(async () => {
+            await GetPartialForDropdownOption(url);
+        }, 100);
+
+    } catch (error) {
+        alert(error);
     }
 }
 
@@ -155,6 +204,12 @@ async function InitializePartials(url) {
             break;
         case URLS.AddColor:
             await CreateColorFunctionality(url)
+            break;
+        case URLS.AddExtraChoice:
+            await CreateExtraChoiceFunctionality(url)
+            break;
+        case URLS.AddProduct:
+            await CreateProductFunctionality(url)
             break;
     }
 }
@@ -279,5 +334,124 @@ async function CreateColorFunctionality(url) {
             ColorName: colorInput.value
         }
         await CreateObjectFromData(url, ColorData)
+    })
+}
+
+async function CreateExtraChoiceFunctionality(url) {
+    let popupButton = document.getElementById(ID_NAMES.EXTRACHOICE_OPEN_POPUP_BUTTON) as HTMLButtonElement
+    popupContainer = document.getElementById(ID_NAMES.EXTRACHOICE_POPUP_CONTAINER) as HTMLElement
+    overlay = document.getElementById(ID_NAMES.OVERLAY) as HTMLElement
+    ExtraChoiceOptions = []
+
+    InitializePopupForm()
+
+    popupButton.addEventListener('click', (event) => {
+        event.preventDefault()
+        popupContainer.classList.remove(CLASS_NAMES.HIDE)
+        overlay.classList.remove(CLASS_NAMES.HIDE)
+    })
+
+    createbutton.addEventListener('click', async (event) => {
+        event.preventDefault()
+
+        if (!CheckFormValidity()) {
+            return
+        }
+
+        const titleInput = PartialContainer.querySelector(`#${ID_NAMES.EXTRACHOICE_TITLE}`) as HTMLInputElement
+        const recognizablenameInput = PartialContainer.querySelector(`#${ID_NAMES.EXTRACHOICE_RECOGNIZABLENAME}`) as HTMLInputElement
+
+        const ExtraChoiceData = {
+            Title: titleInput.value,
+            RecognizableName: recognizablenameInput.value,
+            ExtraChoiceOptions: ExtraChoiceOptions
+        }
+        await CreateObjectFromData(url, ExtraChoiceData)
+    })
+}
+
+function InitializePopupForm() {
+    let addOptionButton = document.getElementById(ID_NAMES.EXTRACHOICE_ADD_OPTION_BUTTON) as HTMLButtonElement
+    addOptionButton.addEventListener('click', (event) => {
+        event.preventDefault()
+
+        const form = document.getElementById(ID_NAMES.EXTRACHOICE_FORM) as HTMLFormElement
+
+        if (!form.checkValidity()) {
+            form.reportValidity()
+            return
+        }
+
+        let nameInput = document.getElementById(ID_NAMES.EXTRACHOICE_OPTION_NAME) as HTMLInputElement
+        let descriptionInput = document.getElementById(ID_NAMES.EXTRACHOICE_OPTION_DESCRIPTION) as HTMLInputElement
+        let extraPriceInput = document.getElementById(ID_NAMES.EXTRACHOICE_OPTION_PRICE) as HTMLInputElement
+
+        let optionData = {
+            Name: nameInput.value,
+            Description: descriptionInput.value,
+            ExtraPrice: Number.parseInt(extraPriceInput.value)
+        }
+        
+        ExtraChoiceOptions.push(optionData)
+        console.log(ExtraChoiceOptions)
+        UpdateListOfOptions()
+        popupContainer.classList.add(CLASS_NAMES.HIDE)
+        overlay.classList.add(CLASS_NAMES.HIDE)
+    })
+
+    let popupCloseBtn = document.getElementById(ID_NAMES.EXTRACHOICE_POPUP_CLOSE_BUTTON) as HTMLButtonElement
+    popupCloseBtn.addEventListener('click', () => {
+        popupContainer.classList.add(CLASS_NAMES.HIDE)
+        overlay.classList.add(CLASS_NAMES.HIDE)
+    })
+}
+
+function UpdateListOfOptions() {
+    let optionlist = document.getElementById(ID_NAMES.EXTRACHOICE_OPTION_LIST) as HTMLElement
+    optionlist.innerHTML = ''
+    ExtraChoiceOptions.forEach((item) => {
+        let listelement = document.createElement('p')
+        let textnode = document.createTextNode(item.Name)
+        listelement.appendChild(textnode)
+        optionlist.appendChild(listelement)
+    })
+}
+
+async function CreateProductFunctionality(url) {
+    createbutton.addEventListener('click', async (event) => {
+        event.preventDefault()
+
+        if (!CheckFormValidity()) {
+            return
+        }
+
+        const nameInput = PartialContainer.querySelector(`#${ID_NAMES.PRODUCT_NAME}`) as HTMLInputElement
+        const priceInput = PartialContainer.querySelector(`#${ID_NAMES.PRODUCT_PRICE}`) as HTMLInputElement
+        const orgInput = PartialContainer.querySelector(`#${ID_NAMES.PRODUCT_ORGANIZATION}`) as HTMLSelectElement
+        const categoryInput = PartialContainer.querySelector(`#${ID_NAMES.PRODUCT_CATEGORY}`) as HTMLSelectElement
+        const imagesInput = PartialContainer.querySelector(`#${ID_NAMES.PRODUCT_IMAGES}`) as HTMLInputElement
+        const sizesInput = PartialContainer.querySelector(`#${ID_NAMES.PRODUCT_SIZES}`) as HTMLSelectElement
+        const extraChoicesInput = PartialContainer.querySelector(`#${ID_NAMES.PRODUCT_EXTRACHOICES}`) as HTMLSelectElement
+        const colorsInput = PartialContainer.querySelector(`#${ID_NAMES.PRODUCT_COLORS}`) as HTMLSelectElement
+        const descriptionInput = PartialContainer.querySelector(`#${ID_NAMES.PRODUCT_DESCRIPTION}`) as HTMLTextAreaElement
+
+
+        const formData = new FormData();
+
+        formData.append("Name", nameInput.value);
+        formData.append("Price", priceInput.value);
+        formData.append("OrganizationID", orgInput.value);
+        formData.append("CategoryID", categoryInput.value);
+        Array.from(imagesInput.files).forEach((file, index) => {
+            formData.append(`Images[${index}]`, file);
+        });
+        Array.from(sizesInput.selectedOptions).forEach(size => formData.append("Sizes", size.value));
+        Array.from(extraChoicesInput.selectedOptions).forEach(choice => formData.append("ExtraChoices", choice.value));
+        Array.from(colorsInput.selectedOptions).forEach(color => formData.append("Colors", color.value));
+        formData.append("Description", descriptionInput.value);
+
+        console.log(formData)
+
+        await CreateObjectFromFormData(url, formData)
     })
 }

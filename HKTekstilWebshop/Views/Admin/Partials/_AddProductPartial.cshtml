@@ -1,0 +1,77 @@
+﻿@model HKTekstilWebshop.Models.Admin.AddProductViewModel
+
+<div class="Admin-Partial-Main-Container Admin-Partial-Product-Main-Container">
+    <div class="Admin-Partial-Box-Container">
+        <h2 class="Admin-Partial-Title">Opret Produkt</h2>
+        <form id="Admin-Partial-Form" class="Admin-Partial-Form-Style">
+            <div class="Admin-Partial-Grid">
+                <div class="Admin-Partial-Grid-Left">
+                    <div class="Admin-Partial-Input-Container">
+                        <label>Navn</label>
+                        <input class="Admin-Partial-Input-Style" id="Product-Name" required />
+                    </div>
+                    <div class="Admin-Partial-Input-Container">
+                        <label>Pris</label>
+                        <input class="Admin-Partial-Input-Style" id="Product-Price" type="number" required />
+                    </div>
+                    <div class="Admin-Partial-Input-Container">
+                        <label>Organisation</label>
+                        <select class="Admin-Partial-Input-Style" id="Product-Organization">
+                            @foreach (var organization in Model.Organizations)
+                            {
+                                <option value="@organization.ID">@organization.Name</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="Admin-Partial-Input-Container">
+                        <label>Kategori</label>
+                        <select class="Admin-Partial-Input-Style" id="Product-Category">
+                            @foreach (var category in Model.Categories)
+                            {
+                                <option value="@category.ID">@category.Name</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="Admin-Partial-Input-Container">
+                        <label>Vælg billeder for produkt</label>
+                        <input type="file" id="Product-Images" accept="image/*" multiple required/>
+                    </div>
+                </div>
+                <div class="Admin-Partial-Grid-Right">
+                    <div class="Admin-Partial-Input-Container">
+                        <label>Størrelser</label>
+                        <select class="Admin-Partial-MultiSelect-Style" id="Product-Sizes" multiple>
+                            @foreach (var size in Model.Sizes)
+                            {
+                                <option value="@size.ID">@size.SizeName</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="Admin-Partial-Input-Container">
+                        <label>Ekstra valg</label>
+                        <select class="Admin-Partial-MultiSelect-Style" id="Product-ExtraChoices" multiple>
+                            @foreach (var extraChoice in Model.ExtraChoices)
+                            {
+                                <option value="@extraChoice.ID">@extraChoice.RecognizableName</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="Admin-Partial-Input-Container">
+                        <label>Farver</label>
+                        <select class="Admin-Partial-MultiSelect-Style" id="Product-Colors" multiple>
+                            @foreach (var color in Model.Colors)
+                            {
+                                <option value="@color.ID">@color.ColorName</option>
+                            }
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="Admin-Partial-Input-Container">
+                <label>Beskrivelse</label>
+                <textarea class="Admin-Partial-Input-Style Admin-Partial-Textarea-Style" id="Product-Description" required></textarea>
+            </div>
+            <button class="Admin-Partial-Button-Style" id="Admin-Partial-Button-Create">Opret</button>
+        </form>
+    </div>
+</div>
